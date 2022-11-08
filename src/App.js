@@ -33,6 +33,42 @@ function App() {
             {
                 "inputs": [
                     {
+                        "internalType": "string",
+                        "name": "_eid",
+                        "type": "string"
+                    },
+                    {
+                        "internalType": "string",
+                        "name": "_password",
+                        "type": "string"
+                    }
+                ],
+                "name": "addemployee",
+                "outputs": [],
+                "stateMutability": "nonpayable",
+                "type": "function"
+            },
+            {
+                "inputs": [
+                    {
+                        "internalType": "string",
+                        "name": "_eid",
+                        "type": "string"
+                    },
+                    {
+                        "internalType": "string",
+                        "name": "_password",
+                        "type": "string"
+                    }
+                ],
+                "name": "employeelogin",
+                "outputs": [],
+                "stateMutability": "nonpayable",
+                "type": "function"
+            },
+            {
+                "inputs": [
+                    {
                         "internalType": "uint256",
                         "name": "_aadhar",
                         "type": "uint256"
@@ -73,6 +109,19 @@ function App() {
             },
             {
                 "inputs": [],
+                "name": "getemployeeloginnumber",
+                "outputs": [
+                    {
+                        "internalType": "string",
+                        "name": "",
+                        "type": "string"
+                    }
+                ],
+                "stateMutability": "view",
+                "type": "function"
+            },
+            {
+                "inputs": [],
                 "name": "getloginnumber",
                 "outputs": [
                     {
@@ -98,7 +147,7 @@ function App() {
                 "type": "function"
             }
         ];
-         const Address="0x0E0Ada5a99F24730c0F6Ea6cE3ae2C8C6FDdEa0C" ;
+         const Address="0x6AEc73ef9Bd1808F5428b70AC38c0a034DaCbAAC" ;
          window.web3=await new Web3(window.ethereum);
          window.contract= await new window.web3.eth.Contract(ABI,Address);
          console.log("connected");
@@ -156,6 +205,13 @@ function App() {
             },
             {
                 "inputs": [],
+                "name": "nominationaadhar",
+                "outputs": [],
+                "stateMutability": "nonpayable",
+                "type": "function"
+            },
+            {
+                "inputs": [],
                 "name": "start_poll",
                 "outputs": [],
                 "stateMutability": "nonpayable",
@@ -170,7 +226,7 @@ function App() {
                 "inputs": [
                     {
                         "internalType": "uint256",
-                        "name": "_aadhar",
+                        "name": "id",
                         "type": "uint256"
                     }
                 ],
@@ -183,7 +239,7 @@ function App() {
                 "inputs": [
                     {
                         "internalType": "uint256",
-                        "name": "_candidateaadhar",
+                        "name": "id",
                         "type": "uint256"
                     },
                     {
@@ -205,6 +261,99 @@ function App() {
                         "internalType": "uint256",
                         "name": "",
                         "type": "uint256"
+                    }
+                ],
+                "stateMutability": "view",
+                "type": "function"
+            },
+            {
+                "inputs": [
+                    {
+                        "internalType": "uint256",
+                        "name": "",
+                        "type": "uint256"
+                    }
+                ],
+                "name": "candidates",
+                "outputs": [
+                    {
+                        "internalType": "uint256",
+                        "name": "nominationid",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "aadhar",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "string",
+                        "name": "name",
+                        "type": "string"
+                    },
+                    {
+                        "internalType": "string",
+                        "name": "partyname",
+                        "type": "string"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "age",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "votes",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "bool",
+                        "name": "hasverified",
+                        "type": "bool"
+                    },
+                    {
+                        "internalType": "bool",
+                        "name": "hasnominated",
+                        "type": "bool"
+                    }
+                ],
+                "stateMutability": "view",
+                "type": "function"
+            },
+            {
+                "inputs": [
+                    {
+                        "internalType": "uint256",
+                        "name": "id",
+                        "type": "uint256"
+                    }
+                ],
+                "name": "getcandidate",
+                "outputs": [
+                    {
+                        "internalType": "uint256",
+                        "name": "",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "string",
+                        "name": "",
+                        "type": "string"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "string",
+                        "name": "",
+                        "type": "string"
+                    },
+                    {
+                        "internalType": "bool",
+                        "name": "",
+                        "type": "bool"
                     }
                 ],
                 "stateMutability": "view",
@@ -267,9 +416,60 @@ function App() {
                 ],
                 "stateMutability": "view",
                 "type": "function"
+            },
+            {
+                "inputs": [
+                    {
+                        "internalType": "uint256",
+                        "name": "",
+                        "type": "uint256"
+                    }
+                ],
+                "name": "nominatedcandidate",
+                "outputs": [
+                    {
+                        "internalType": "uint256",
+                        "name": "",
+                        "type": "uint256"
+                    }
+                ],
+                "stateMutability": "view",
+                "type": "function"
+            },
+            {
+                "inputs": [],
+                "name": "nominationcount",
+                "outputs": [
+                    {
+                        "internalType": "uint256",
+                        "name": "",
+                        "type": "uint256"
+                    }
+                ],
+                "stateMutability": "view",
+                "type": "function"
+            },
+            {
+                "inputs": [
+                    {
+                        "internalType": "uint256",
+                        "name": "id",
+                        "type": "uint256"
+                    }
+                ],
+                "name": "votecount",
+                "outputs": [
+                    {
+                        "internalType": "uint256",
+                        "name": "",
+                        "type": "uint256"
+                    }
+                ],
+                "stateMutability": "view",
+                "type": "function"
             }
         ];
-        const Address="0x4e4EE5C7ab9ecec565C83C75Bf36c3C13E01Eda7" ;
+        const Address="0x01cAa8a0ab0737f11450Eb6C0707975E5318328A" ;
         window.web3=await new Web3(window.ethereum);
         window.contract2= await new window.web3.eth.Contract(ABI,Address);
         console.log("connected2");
@@ -282,10 +482,8 @@ function App() {
           <Routes>
           <Route exact path="/" element={<Loginsignup />} />
             <Route exact path="/voter" element={<Voter />} />
-            <Route exact path="/adminlogin/admin" element={<Admin />} />
-            <Route exact path="/adminlogin/admin/verify" element={<Verify />} />
             <Route exact path="/voter/login" element={<Login account={account}/>} />
-            <Route exact path="/adminlogin" element={<Adminlogin />} />
+            <Route exact path="/adminlogin" element={<Adminlogin account={account} />} />
             <Route exact path="/voter/signup" element={<Signup account={account} />} />
           </Routes>
         

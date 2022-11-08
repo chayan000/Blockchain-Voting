@@ -103,7 +103,7 @@ input[type=submit]{
   width: 200px;
   background-color: rgb(98, 193, 219);
   text-align: center;
-  
+ 
 }
 .elements{
   width: 200px;
@@ -157,8 +157,16 @@ input[type=submit]{
   display: block;
 }
 .body{
+  
   display: flex;
+  gap: 50px;
+  border-right: 0px;
+}
+.body2{
+  
   gap: 20px;
+  display: flex;
+  flex-wrap: wrap;
 }
 .busket2{
   margin-right: 20%;
@@ -207,4 +215,12 @@ input[type=submit]{
   border-top: 1px solid rgb(255, 255, 255);
   width: 150px;
   padding: 0px;
+}
+.voterbody{
+  position: relative;
+  left: 60px;
+display: block;
+}
+.busket4{
+  display: flex;
 }

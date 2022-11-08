@@ -1,11 +1,11 @@
 import React from 'react';
 import Navadmin from './Navadmin';
 import Header from './Header';
-import { Link } from 'react-router-dom';
-function admin(){
+
+function admin(props){
     return(
         <div >
-          <Header/>  
+          <Header aadhar={props.eid}/>  
           <div className="body">
             <Navadmin/>
           </div>

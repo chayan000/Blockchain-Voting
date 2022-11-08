@@ -1,57 +1,43 @@
-import React from 'react';
-import Avatar from 'react-avatar';
+import React, { useState, useEffect } from 'react';
+import Candidates from './Candidates';
 
-function vote(props){
-    return(
-        <div>
-            
-            <div className="body">
-                <div className="busket4">
-            <div className="busket1">
-                <p className='admintext'>Lok sava election 2024   phase 1</p>
-                <p>Name: Abc Def</p>
-                <Avatar facebookId="100008343750912" />
-                <p>age: 53</p>
-                <p>party: sjk</p>
-                <button className='button1'>Vote</button>
-            </div>
-            <div className="busket1">
-                <p className='admintext'>Lok sava election 2024   phase 1</p>
-                <p>Name: Ghi Jkl</p>
-                <Avatar facebookId="100008343750912" />
-                <p>age: 41</p>
-                <p>party: jmp</p>
-                <button className='button1'>Vote</button>
-            </div>
-            <div className="busket1">
-                <p className='admintext'>Lok sava election 2024   phase 1</p>
-                <p>Name: Pqr Stu</p>
-                <Avatar facebookId="100008343750912" />
-                <p>age: 62</p>
-                <p>party: tvl</p>
-                <button className='button1'>Vote</button>
-            </div>
-            <div className="busket1">
-                <p className='admintext'>Lok sava election 2024   phase 1</p>
-                <p>Name: Pqr Stu</p>
-                <Avatar facebookId="100008343750912" />
-                <p>age: 62</p>
-                <p>party: tvl</p>
-                <button className='button1'>Vote</button>
-            </div>
-            <div className="busket1">
-                <p className='admintext'>Lok sava election 2024   phase 1</p>
-                <p>Name: Pqr Stu</p>
-                <Avatar facebookId="100008343750912" />
-                <p>age: 62</p>
-                <p>party: tvl</p>
-                <button className='button1'>Vote</button>
-            </div>
-                </div>
-            </div>
+function Vote(props) {
+    let list = [];
+    let array=[];   
+    test();
+    
+    async function test() {
+        let arr1 = ['aadhar', 'name', 'age', 'partyname', 'hasverified']
+        const nominationcount = await window.contract2.methods.nominationcount().call();
+        for (var i = 0; i < nominationcount; i++) {
+            const x = await window.contract2.methods.getcandidate(i).call();
+            list[i] = Object.values(x);
+            const obj = {};
+            arr1.forEach((element, index) => {
+                obj[element] = list[i][index];
+            });
+            array.push(obj);
+        }
+    } 
+    const [person,setperson]=useState(array);
+   
+    function ccard(val){
+        return(
+            <Candidates name={val.name} age={val.age} partyname={val.partyname} />
+        );
+    }
 
+    return (
+        <div className='voterbody'>
+            <div className='body2'>
+                {
+                  person.map(ccard)
+                }
+               
+            </div>
         </div>
     );
 }
 
-export default vote;
+
+export default Vote;
