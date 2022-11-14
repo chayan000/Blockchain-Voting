@@ -1,44 +1,39 @@
 import React from 'react'
-import { useEffect, useState } from 'react';
-import { Link } from "react-router-dom";
-function Navbar() {
-    const [account,setaccount]=useState()
-  useEffect(()=>{
-    loadAccounts();
-  },[])
-
-  async function loadAccounts(){
-    if (typeof window.ethereum !== 'undefined') {
-      const { ethereum } = window;
-      const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
-      setaccount(accounts[0]);
-    } 
-    else {
-      alert('Please install MetaMask');
-    }
+import { Link } from 'react-router-dom'
+function Navadmin(props) {
+  async function home(){
+    props.function("home")
+  }
+  async function verify(){
+    props.function("verifynomination")
   }
     return (
-        <div>
+        <>
             <div className="nav">
                 <div className="navelements" >
-                    <ul>
+                    <ul className='navitems'>
                         <li className="nav-item">
-                            <Link className="nav-link" to="/adminlogin/admin">Home</Link>
+                            <button className='button3' onClick={home}>Home</button>
                         </li>
+                        <div className="line-2"></div>
                         <li className="nav-item">
-                            <Link className="nav-link" to="/adminlogin/admin/Verify">Verify Nominations</Link>
+                        <button className='button3' onClick={verify}>Verify Nominations</button>
                         </li>
-                        <li className="nav-item">
-                            <Link className="nav-link" to="/adminlogin/admin/phase">Poll Phase</Link>
-                        </li>
-                        <li className="nav-item">
-                            <Link className="nav-link" to="/adminlogin/admin/publish">Publish Result</Link>
-                        </li>
+                        <div className="line-2"></div>
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <Link to="/">
+                        <button className='button1'>Log Out</button>
+                        </Link>
                     </ul>
                 </div>
             </div>
-        </div>
+
+        </>
     );
 }
 
-export default Navbar
+export default Navadmin

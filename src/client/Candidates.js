@@ -9,7 +9,7 @@ function Candidates(props) {
                 <p>Name: {props.name}</p>
                 <Avatar facebookId="100008343750912" />
                 <p>age: {props.age}</p>
-                <p>party: {props.partyname}</p>
+                <p>partyname: {props.partyname}</p>
                 <button className='button1'>Vote</button>
             </div>
         </div>

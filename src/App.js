@@ -349,6 +349,40 @@ function App() {
                         "internalType": "string",
                         "name": "",
                         "type": "string"
+                    }
+                ],
+                "stateMutability": "view",
+                "type": "function"
+            },
+            {
+                "inputs": [
+                    {
+                        "internalType": "uint256",
+                        "name": "id",
+                        "type": "uint256"
+                    }
+                ],
+                "name": "getnominations",
+                "outputs": [
+                    {
+                        "internalType": "uint256",
+                        "name": "",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "string",
+                        "name": "",
+                        "type": "string"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "string",
+                        "name": "",
+                        "type": "string"
                     },
                     {
                         "internalType": "bool",
@@ -450,6 +484,19 @@ function App() {
                 "type": "function"
             },
             {
+                "inputs": [],
+                "name": "topic",
+                "outputs": [
+                    {
+                        "internalType": "string",
+                        "name": "",
+                        "type": "string"
+                    }
+                ],
+                "stateMutability": "view",
+                "type": "function"
+            },
+            {
                 "inputs": [
                     {
                         "internalType": "uint256",
@@ -469,7 +516,7 @@ function App() {
                 "type": "function"
             }
         ];
-        const Address="0x01cAa8a0ab0737f11450Eb6C0707975E5318328A" ;
+        const Address="0x9Bc82A7E529BD7dD96e9C74AB72e331a3183EAeb" ;
         window.web3=await new Web3(window.ethereum);
         window.contract2= await new window.web3.eth.Contract(ABI,Address);
         console.log("connected2");

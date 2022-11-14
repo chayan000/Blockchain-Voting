@@ -17,7 +17,7 @@ function Voterhome(props) {
             <Header aadhar={props.aadhar}/>
             <div className="body">
                 <Navbar function={change}/>
-                {console.log(component)}
+                
                 {component==="nomination"?<Nomination aadhar={props.aadhar} account={props.account}/>:component==="vote"?<Vote aadhar={props.aadhar} account={props.account}/>:component==="result"?<Result aadhar={props.aadhar} account={props.account}/>:<Home/>}
             </div>
            

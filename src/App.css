@@ -45,6 +45,17 @@
   width: 150px;
   font-size: 25px;
   margin: 10px;
+  cursor: pointer;
+}
+.button4 {
+  color: floralwhite;
+  border-radius: 20px;
+  height: 50px;
+  width: 150px;
+  font-size: 25px;
+  margin: 10px;
+  cursor: pointer;
+  background-color: rgb(5, 133, 91);
 }
 
   {
@@ -186,6 +197,7 @@ input[type=submit]{
   width: 200px;
   font-size: 30px;
   margin: 10px;
+  cursor: pointer;
 }
 .busket1{
   background-color: rgb(228, 157, 244);
@@ -199,6 +211,14 @@ input[type=submit]{
   margin: 0cm 5cm 5cm 5cm;
   
 }
+.busket9{
+  margin: 0px;
+  padding: 0px;
+  orientation: landscape;
+  display: inline-block;
+  width: 800px;
+  height: 300px;
+}
 .candidates{
   display: flex;
   gap: 30px;
@@ -210,10 +230,16 @@ input[type=submit]{
   border-style: hidden;
   background-color:rgb(98, 193, 219);
   color: rgb(22, 44, 66);
+  cursor: pointer;
 }
 .line-2 {
   border-top: 1px solid rgb(255, 255, 255);
   width: 150px;
+  padding: 0px;
+}
+.line-3 {
+  border-top: 1px solid rgb(242, 69, 69);
+  width: 500px;
   padding: 0px;
 }
 .voterbody{
@@ -223,4 +249,20 @@ display: block;
 }
 .busket4{
   display: flex;
+}
+.side{
+  display: flex;
+}
+table {
+  border: 2px solid rgb(10, 97, 10);
+  width: 800px;
+  height: 200px;
+}
+  
+th {
+  border-bottom: 1px solid black;
+}
+  
+td {
+  text-align: center;
 }
