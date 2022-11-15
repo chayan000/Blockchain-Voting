@@ -5,6 +5,7 @@ import Nominees from './Nominees';
 
 function Verifynomination(props) {
   const [data, setdata] = useState([]);
+  const[topic,settopic]=useState();
   useEffect(() => {
     async function getnominees() {
       let array = []
@@ -12,24 +13,30 @@ function Verifynomination(props) {
       for (var i = 0; i < nominationcount; i++) {
         let x = await window.contract2.methods.candidates(i).call();
         const obj = {
+          "nominationid": x.nominationid,
           "aadhar": x.aadhar,
           "name": x.name,
           "age": x.age,
           "partyname": x.partyname,
+          "hasnominated": x.hasnominated,
         }
         array.push(obj)
       }
       setdata(array)
     }
     getnominees();
+    gettopic();
   }, [])
-console.log(data)
+  async function gettopic(){
+    const _topic = await window.contract2.methods.topic().call();
+    settopic(_topic)
+  }
   return (
     <div >
       <div className="voterbody">
         
-        <h1 className='admintext'>Lok sava election 2024   phase 1</h1>
-          {data.map((element) => { return (<Nominees aadhar={element.aadhar} name={element.name} age={element.age} partyname={element.partyname} />); }
+        <h1 className='admintext'>{topic}</h1>
+          {data.map((element) => { return (element.hasnominated===true?<Nominees id={element.nominationid} aadhar={element.aadhar} name={element.name} age={element.age} partyname={element.partyname} account={props.account} />:null); }
           )}
        
       </div>

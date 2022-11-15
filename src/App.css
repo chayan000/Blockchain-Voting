@@ -254,15 +254,16 @@ display: block;
   display: flex;
 }
 table {
-  border: 2px solid rgb(10, 97, 10);
-  width: 800px;
-  height: 200px;
+  border: 3px solid rgb(10, 97, 10);
+  width: 900px;
+  height: 150px;
 }
   
 th {
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid rgb(225, 96, 96);
 }
   
 td {
   text-align: center;
+  color: blue;
 }

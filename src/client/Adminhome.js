@@ -7,8 +7,9 @@ function Adminhome(props) {
     useEffect(() => {
         checkstate();
       });
-    async function submit(_topic) {
+    async function submit(e) {
         try{
+            e.preventDefault();
             await window.contract2.methods.create_poll(_topic).send({from :props.account});
         }
         catch{
@@ -50,7 +51,8 @@ function Adminhome(props) {
     }
     async function showresult(){
         alert("result will be shared with the users");
-    } 
+    }
+    
     return (
         <div >
             <div className="body">
