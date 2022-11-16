@@ -267,3 +267,7 @@ td {
   text-align: center;
   color: blue;
 }
+.v1{
+  border-left: 3px solid rgb(22, 25, 165);
+  height: 500px;
+}

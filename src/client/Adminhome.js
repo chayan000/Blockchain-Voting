@@ -51,6 +51,7 @@ function Adminhome(props) {
     }
     async function showresult(){
         alert("result will be shared with the users");
+        await window.contract2.methods.setpublishresult().call();
     }
     
     return (

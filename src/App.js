@@ -217,13 +217,6 @@ function App() {
                 "type": "function"
             },
             {
-                "inputs": [],
-                "name": "nominationaadhar",
-                "outputs": [],
-                "stateMutability": "nonpayable",
-                "type": "function"
-            },
-            {
                 "inputs": [
                     {
                         "internalType": "uint256",
@@ -237,6 +230,13 @@ function App() {
                     }
                 ],
                 "name": "rejectcandidate",
+                "outputs": [],
+                "stateMutability": "nonpayable",
+                "type": "function"
+            },
+            {
+                "inputs": [],
+                "name": "setpublishresult",
                 "outputs": [],
                 "stateMutability": "nonpayable",
                 "type": "function"
@@ -416,14 +416,8 @@ function App() {
                 "type": "function"
             },
             {
-                "inputs": [
-                    {
-                        "internalType": "uint256",
-                        "name": "",
-                        "type": "uint256"
-                    }
-                ],
-                "name": "nominatedcandidate",
+                "inputs": [],
+                "name": "nominationcount",
                 "outputs": [
                     {
                         "internalType": "uint256",
@@ -436,12 +430,12 @@ function App() {
             },
             {
                 "inputs": [],
-                "name": "nominationcount",
+                "name": "publishresult",
                 "outputs": [
                     {
-                        "internalType": "uint256",
+                        "internalType": "bool",
                         "name": "",
-                        "type": "uint256"
+                        "type": "bool"
                     }
                 ],
                 "stateMutability": "view",
@@ -480,7 +474,7 @@ function App() {
                 "type": "function"
             }
         ];
-        const Address="0xe94331d9f6aD6BF4a071A5133E341A2b4ED6Fed2" ;
+        const Address="0xf4Bef9FA2097Ca15D29470BcdEBB950eb85B36e9" ;
         window.web3=await new Web3(window.ethereum);
         window.contract2= await new window.web3.eth.Contract(ABI,Address);
         console.log("connected2");

@@ -4,6 +4,7 @@ import Avatar from 'react-avatar';
 function Candidates(props) {
     async function vote(){
         await window.contract2.methods.vote(props.id,props.uaadhar).send({from :props.account});
+        alert("Successful Voting!!!")
     }
     return (
         <div className="busket4">
