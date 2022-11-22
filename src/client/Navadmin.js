@@ -7,6 +7,9 @@ function Navadmin(props) {
   async function verify(){
     props.function("verifynomination")
   }
+  async function result(){
+    props.function("result")
+  }
     return (
         <>
             <div className="nav">
@@ -18,6 +21,10 @@ function Navadmin(props) {
                         <div className="line-2"></div>
                         <li className="nav-item">
                         <button className='button3' onClick={verify}>Verify Nominations</button>
+                        </li>
+                        <div className="line-2"></div>
+                        <li className="nav-item">
+                        <button className='button3' onClick={result}>Result</button>
                         </li>
                         <div className="line-2"></div>
                         <br />

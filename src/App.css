@@ -1,6 +1,4 @@
-.App {
-  
-}
+.App {}
 
   {
   /*loginsignup page styling*/
@@ -11,9 +9,11 @@
   border-right: 30;
 
 }
-.name{
+
+.name {
   font-size: 50px;
 }
+
 .leftside {
   padding: 20px;
   background-color: aquamarine;
@@ -47,6 +47,7 @@
   margin: 10px;
   cursor: pointer;
 }
+
 .button4 {
   color: floralwhite;
   border-radius: 20px;
@@ -61,7 +62,8 @@
   {
   /*Login page styling*/
 }
-.busket{
+
+.busket {
   text-align: center;
   display: block;
   width: 600px;
@@ -74,6 +76,7 @@
   font-size: 30px;
   border-radius: 30px;
 }
+
 input[type=text] {
   border: none;
   border-bottom: 2px solid red;
@@ -82,6 +85,7 @@ input[type=text] {
   width: 300px;
   height: 30px;
 }
+
 input[type=number] {
   border: none;
   border-bottom: 2px solid red;
@@ -90,6 +94,7 @@ input[type=number] {
   width: 300px;
   height: 30px;
 }
+
 input[type=password] {
   border: none;
   border-bottom: 2px solid red;
@@ -97,7 +102,8 @@ input[type=password] {
   width: 300px;
   height: 30px;
 }
-input[type=submit]{
+
+input[type=submit] {
   border-radius: 10px;
   font-size: medium;
   height: 40px;
@@ -105,81 +111,98 @@ input[type=submit]{
   background-color: rgb(161, 161, 211);
   color: brown;
 }
-{/*navbar style
-*/}
-.nav{
+
+  {
+  /*navbar style
+*/
+}
+
+.nav {
   margin-top: 0%;
-  border-radius: 5pt;
+  border-top-right-radius: 10pt;
+  border-bottom-right-radius: 10pt;
   height: 100vh;
   width: 200px;
   background-color: rgb(98, 193, 219);
   text-align: center;
- 
+
 }
-.elements{
+
+.elements {
   width: 200px;
   height: 20%;
   color: azure;
   gap: 20px;
 }
-.navelements{
+
+.navelements {
   padding-left: 0px;
   width: 50px;
 }
-.nav-item{
+
+.nav-item {
   margin-top: 30px;
   text-align: center;
   font-size: 20pt;
   list-style: none;
   margin-left: 0px;
 }
-.navitems{
+
+.navitems {
   padding-left: 0px;
   margin-left: 0px;
   border-left: 0px;
 }
-.nav-link{
+
+.nav-link {
   border: 0px;
 }
-.navbar-start{
+
+.navbar-start {
   display: flex;
-  
+
 }
-.head{
-  display:flex;
-  
+
+.head {
+  display: flex;
+
 }
-.headerend{
+
+.headerend {
   display: flex;
   position: fixed;
   right: 20px;
   text-align: center;
   font-size: 25px;
 }
-.headername{
+
+.headername {
   font-size: 50px;
   margin: 0px;
-  color: darkslateblue;
+  color: rgb(22, 15, 234);
 }
-.end{
+
+.end {
   margin: 10px;
 }
-.home{
+
+.home {
   display: block;
 }
-.body{
-  
+
+.body {
   display: flex;
   gap: 50px;
   border-right: 0px;
 }
-.body2{
-  
+
+.body2 {
   gap: 20px;
   display: flex;
   flex-wrap: wrap;
 }
-.busket2{
+
+.busket2 {
   margin-right: 20%;
   background-color: rgb(132, 255, 255);
   margin-left: 20%;
@@ -190,6 +213,7 @@ input[type=submit]{
   font-size: large;
   width: 1100px;
 }
+
 .button2 {
   color: chocolate;
   border-radius: 20px;
@@ -199,19 +223,22 @@ input[type=submit]{
   margin: 10px;
   cursor: pointer;
 }
-.busket1{
-  background-color: rgb(228, 157, 244);
+
+.busket1 {
+  background-color: rgb(190, 147, 199);
   margin: 30px;
   padding: 30px;
   orientation: landscape;
   display: inline-block;
 }
-.busket3{
+
+.busket3 {
   background-color: aquamarine;
   margin: 0cm 5cm 5cm 5cm;
-  
+
 }
-.busket9{
+
+.busket9 {
   margin: 0px;
   padding: 0px;
   orientation: landscape;
@@ -219,55 +246,74 @@ input[type=submit]{
   width: 800px;
   height: 300px;
 }
-.candidates{
+
+.candidates {
   display: flex;
   gap: 30px;
   margin-top: 20px;
 }
-.button3{
+
+.button3 {
   width: 50px;
   font-size: 30px;
   border-style: hidden;
-  background-color:rgb(98, 193, 219);
+  background-color: rgb(98, 193, 219);
   color: rgb(22, 44, 66);
   cursor: pointer;
 }
+
 .line-2 {
   border-top: 1px solid rgb(255, 255, 255);
   width: 150px;
   padding: 0px;
 }
+
 .line-3 {
   border-top: 1px solid rgb(242, 69, 69);
   width: 500px;
   padding: 0px;
 }
-.voterbody{
+
+.voterbody {
   position: relative;
   left: 60px;
-display: block;
+  display: block;
 }
-.busket4{
+
+.busket4 {
   display: flex;
 }
-.side{
+
+.side {
   display: flex;
 }
+
 table {
   border: 3px solid rgb(10, 97, 10);
   width: 900px;
   height: 150px;
 }
-  
+
 th {
   border-bottom: 1px solid rgb(225, 96, 96);
 }
-  
+
 td {
   text-align: center;
   color: blue;
 }
-.v1{
+
+.v1 {
   border-left: 3px solid rgb(22, 25, 165);
   height: 500px;
+}
+
+.admintext {
+  color: rgb(107, 7, 50);
+  text-align: center;
+}
+.body3{
+  display: block;
+  margin-left: 80px;
+  padding-left: 60px;
 }

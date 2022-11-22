@@ -39,7 +39,7 @@ function Signup(props){
         <div className="busket">
             <p>sign up</p>
                 <label>
-                    <input onChange={(e)=>setaadhar(e.target.value)} placeholder="Aadhar No" value={aadhar} type="number" id="aadhar" />
+                    <input onChange={(e)=>setaadhar(e.target.value)} placeholder="Voter No" value={aadhar} type="number" id="aadhar" />
                 </label>
                 <br />
                 <label>

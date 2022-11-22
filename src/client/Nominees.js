@@ -26,7 +26,7 @@ function Candidates(props) {
                 
                 <table>
                     <tr>
-                        <th>Aadhar No</th>
+                        <th>Voter No</th>
                         <th>Name</th>
                         <th>Age</th>
                         <th>Photo</th>

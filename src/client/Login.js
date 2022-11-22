@@ -36,7 +36,7 @@ function Login(props) {
         <div className="busket">
             <h2>Login</h2>
                 <label>
-                    <input onChange={(e)=>setinputaadhar(e.target.value)} placeholder="Aadhar No" value={inputaadhar} type="number" id="inputaadhar" />
+                    <input onChange={(e)=>setinputaadhar(e.target.value)} placeholder="Voter No" value={inputaadhar} type="number" id="inputaadhar" />
                 </label>
                 <br />
                 <label>

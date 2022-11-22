@@ -31,12 +31,13 @@ function Verifynomination(props) {
     const _topic = await window.contract2.methods.topic().call();
     settopic(_topic)
   }
+ 
   return (
     <div >
       <div className="voterbody">
         
         <h1 className='admintext'>{topic}</h1>
-          {data.map((element) => { return (element.hasnominated===true?<Nominees id={element.nominationid} aadhar={element.aadhar} name={element.name} age={element.age} partyname={element.partyname} account={props.account} />:null); }
+          {data.map((element) => {return (element.hasnominated===true?<Nominees id={element.nominationid} aadhar={element.aadhar} name={element.name} age={element.age} partyname={element.partyname} account={props.account} />:null); }
           )}
        
       </div>

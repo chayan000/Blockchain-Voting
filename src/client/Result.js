@@ -1,8 +1,12 @@
 import React from 'react';
 import { useState,useEffect } from 'react';
+import Chart from "react-apexcharts";
 function Result(props){
   const [data, setdata] = useState([]);
   const[topic,settopic]=useState();
+  const[flag,setflag]=useState();
+  let votes=[]
+  let candidates=[]
   useEffect(() => {
     async function getnominees() {
       let array = []
@@ -10,34 +14,50 @@ function Result(props){
       for (var i = 0; i < nominationcount; i++) {
         let x = await window.contract2.methods.candidates(i).call();
         const obj = {
-          "nominationid": x.nominationid,
-          "aadhar": x.aadhar,
           "name": x.name,
-          "age": x.age,
-          "partyname": x.partyname,
-          "hasnominated": x.hasnominated,
           "hasverified": x.hasverified,
           "votes": x.votes,
+          "partyname":x.partyname
         }
-        array.push(obj)
+          array.push(obj)
+        
       }
-      setdata(array)
+      setdata(array);
     }
     getnominees();
     gettopic();
+    isactive();
   }, [])
+  data.map((element)=>{
+    if(element.hasverified==true){
+      votes.push(parseInt(element.votes));
+      candidates.push(element.name+"("+element.partyname+")");
+    }
+  })
   async function gettopic(){
     const _topic = await window.contract2.methods.topic().call();
     settopic(_topic)
   }
+  async function isactive(){
+    let x = await window.contract2.methods.publishresult().call();
+    if (x === false) {
+      setflag(0) //can not show result
+    }
+    if (x === true) {
+      setflag(1)  //can show result
+    }
+  }
     return(
-        <div >
-          <div className="voterbody">
+        <div className="body3">
           <h1 className='admintext'>{topic}</h1>
-          {data.map((element) => { return (element.hasverified===true?<h1>name: {element.name} partyname: {element.partyname} votes: {element.votes} </h1>:null); }
-          )}
-       
-          </div>
+          <div className="voterbody"> 
+          
+  
+         
+          {flag?<Chart type="donut" height={750} width={750} series={votes} options={{labels:candidates}}/>:<h1 style={{color:"RED"}}>Not available...</h1>}
+          
+          
+        </div>
         </div>
     );
 }

@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-function loginsignup() {
+function Loginsignup() {
     return (
         <div className="container">
             <div className="leftside">
@@ -26,4 +26,4 @@ function loginsignup() {
     );
 }
 
-export default loginsignup
+export default Loginsignup

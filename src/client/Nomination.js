@@ -6,13 +6,17 @@ function Nomination(props) {
   const [age, setage] = useState();
   const [partyname, setpartyname] = useState();
   const [flag, setflag] = useState(0);
+  const[flag1,setflag1]=useState(0);
+  const[topic,settopic]=useState("");
   useEffect(() => {
+    hastopic();
     hasstarted();
   }, [])
   async function submit(e) {
     try {
       e.preventDefault();
       await window.contract2.methods.add_candidate(props.aadhar, name, partyname, age).send({ from: props.account });
+      alert("Nomination filed successfully")
     }
     catch {
       alert("Transaction failed");
@@ -27,15 +31,27 @@ function Nomination(props) {
       setflag(1)  //started
     }
   }
+  async function hastopic() {
+    let x = await window.contract2.methods.topic().call();
+    if (x === "") {
+      setflag1(0) //not started
+    }
+    else {
+      setflag1(1)  //started
+      settopic(x);
+    }
+  }
+
     return (
       <div >
         <div className="body">
-          {flag ? <h1 style={{color: "RED"}}>Voting is On. Nominations are not accepted...</h1> :
+          {flag1?(flag ? <h1 style={{color: "RED"}}>Voting is On. Nominations are not accepted...</h1> :
             <div className="busket2">
+              <h2 style={{color:"BLUE"}}>{topic}</h2>
               <div className="side">
                 <div className="new">
                   <h2 style={{ color: "Red" }}>Submit Nomination</h2>
-                  <p>Aadhar No: {props.aadhar}</p>
+                  <p>Voter No: {props.aadhar}</p>
                   <label>
                     <input onChange={(e) => setname(e.target.value)} placeholder="Name" value={name} type="text" id="name" />
                   </label>
@@ -52,12 +68,12 @@ function Nomination(props) {
                 </div>
                 <div className="v1"></div>
                 <div className="new">
-                  <h3 style={{ color: "Red" }}>***Nominations can be submitted before vote starts</h3>
+                  <h3 >***Nominations can be submitted before vote starts</h3>
                   <p>Your submitted details will be verified by the Admin before Voting Starts</p>
                 </div>
               </div>
             </div>
-          }
+          ):<h1 style={{color: "RED"}}>Nomination Phase is not active...</h1>}
         </div>
       </div>
     );
