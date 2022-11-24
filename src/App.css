@@ -1,8 +1,5 @@
-.App {}
+/*loginsignup page styling*/
 
-  {
-  /*loginsignup page styling*/
-}
 
 .container {
   display: flex;
@@ -59,9 +56,7 @@
   background-color: rgb(5, 133, 91);
 }
 
-  {
-  /*Login page styling*/
-}
+/*Login page styling*/
 
 .busket {
   text-align: center;
@@ -111,11 +106,8 @@ input[type=submit] {
   background-color: rgb(161, 161, 211);
   color: brown;
 }
+/*navbar style*/
 
-  {
-  /*navbar style
-*/
-}
 
 .nav {
   margin-top: 0%;
