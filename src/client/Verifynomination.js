@@ -14,7 +14,7 @@ function Verifynomination(props) {
         let x = await window.contract2.methods.candidates(i).call();
         const obj = {
           "nominationid": x.nominationid,
-          "aadhar": x.aadhar,
+          "voterid": x.voterid,
           "name": x.name,
           "age": x.age,
           "partyname": x.partyname,
@@ -37,7 +37,7 @@ function Verifynomination(props) {
       <div className="voterbody">
         
         <h1 className='admintext'>{topic}</h1>
-          {data.map((element) => {return (element.hasnominated===true?<Nominees id={element.nominationid} aadhar={element.aadhar} name={element.name} age={element.age} partyname={element.partyname} account={props.account} />:null); }
+          {data.map((element) => {return (element.hasnominated===true?<Nominees id={element.nominationid} voterid={element.voterid} name={element.name} age={element.age} partyname={element.partyname} account={props.account} />:null); }
           )}
        
       </div>

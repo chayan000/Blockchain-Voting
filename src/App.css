@@ -62,8 +62,8 @@
   text-align: center;
   display: block;
   width: 600px;
-  height: 500px;
-  background-color: aquamarine;
+  height: auto;
+  background-color: rgb(160, 245, 217);
   margin-top: 4cm;
   margin-left: auto;
   margin-right: auto;
@@ -71,7 +71,9 @@
   font-size: 30px;
   border-radius: 30px;
 }
-
+.dropdown{
+  font-size: 21px;
+}
 input[type=text] {
   border: none;
   border-bottom: 2px solid red;
@@ -205,7 +207,30 @@ input[type=submit] {
   font-size: large;
   width: 1100px;
 }
-
+.busket6 {
+  margin-right: 20%;
+  background-color: rgb(156, 250, 250);
+  margin-left: 20%;
+  margin-bottom: 20%;
+  margin-top: 20px;
+  border-radius: 30px;
+  padding: 20px;
+  font-size: large;
+  width: 1100px;
+  text-align: center;
+}
+.busket7 {
+  margin-right: 20%;
+  background-color: rgb(156, 250, 250);
+  margin-left: 0%;
+  margin-bottom: 20%;
+  margin-top: 20px;
+  border-radius: 30px;
+  padding: 20px;
+  font-size: large;
+  width: 1500px;
+  text-align: center;
+}
 .button2 {
   color: chocolate;
   border-radius: 20px;
@@ -247,7 +272,7 @@ input[type=submit] {
 
 .button3 {
   width: 50px;
-  font-size: 30px;
+  font-size: 25px;
   border-style: hidden;
   background-color: rgb(98, 193, 219);
   color: rgb(22, 44, 66);

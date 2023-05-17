@@ -2,9 +2,9 @@ import Loginsignup from './client/Loginsignup';
 import Login from './client/Login';
 import Signup from './client/Signup';
 import Voter from './client/Voter';
-import Admin from './client/Admin';
-import Verify from './client/Verify';
 import Adminlogin from './client/Adminlogin';
+import Loginotp from './client/Loginotp';
+import Voterhome from './client/Voterhome';
 import './App.css';
 import { Routes, Route } from "react-router-dom";
 import { useState, useEffect } from 'react';
@@ -27,9 +27,9 @@ function App() {
            alert("install metamask first")
          }
      };
- 
+    //loginsignup
      async function smartcontract(){
-         const ABI = [
+         const ABI =[
             {
                 "inputs": [
                     {
@@ -70,7 +70,7 @@ function App() {
                 "inputs": [
                     {
                         "internalType": "uint256",
-                        "name": "_aadhar",
+                        "name": "_voterid",
                         "type": "uint256"
                     },
                     {
@@ -88,8 +88,13 @@ function App() {
                 "inputs": [
                     {
                         "internalType": "uint256",
-                        "name": "_aadhar",
+                        "name": "_voterid",
                         "type": "uint256"
+                    },
+                    {
+                        "internalType": "string",
+                        "name": "_mobileno",
+                        "type": "string"
                     },
                     {
                         "internalType": "string",
@@ -106,6 +111,11 @@ function App() {
                 "outputs": [],
                 "stateMutability": "nonpayable",
                 "type": "function"
+            },
+            {
+                "inputs": [],
+                "stateMutability": "nonpayable",
+                "type": "constructor"
             },
             {
                 "inputs": [],
@@ -134,6 +144,25 @@ function App() {
                 "type": "function"
             },
             {
+                "inputs": [
+                    {
+                        "internalType": "uint256",
+                        "name": "_voterid",
+                        "type": "uint256"
+                    }
+                ],
+                "name": "getmobilenumber",
+                "outputs": [
+                    {
+                        "internalType": "string",
+                        "name": "",
+                        "type": "string"
+                    }
+                ],
+                "stateMutability": "view",
+                "type": "function"
+            },
+            {
                 "inputs": [],
                 "name": "getsignupnumber",
                 "outputs": [
@@ -147,12 +176,11 @@ function App() {
                 "type": "function"
             }
         ];
-         const Address="0x6AEc73ef9Bd1808F5428b70AC38c0a034DaCbAAC" ;
+         const Address="0x2a6282F95146F6785D3cac6d8B0b4AdBDFd645E1" ;
          window.web3=await new Web3(window.ethereum);
          window.contract= await new window.web3.eth.Contract(ABI,Address);
-         console.log("connected");
      }
-
+    //voting
      async function smartcontract2(){
         const ABI =[
             {
@@ -172,7 +200,7 @@ function App() {
                 "inputs": [
                     {
                         "internalType": "uint256",
-                        "name": "_aadhar",
+                        "name": "_voterid",
                         "type": "uint256"
                     },
                     {
@@ -225,7 +253,7 @@ function App() {
                     },
                     {
                         "internalType": "uint256",
-                        "name": "_aadhar",
+                        "name": "_voterid",
                         "type": "uint256"
                     }
                 ],
@@ -269,7 +297,7 @@ function App() {
                     },
                     {
                         "internalType": "uint256",
-                        "name": "_voteraadhar",
+                        "name": "_voterid",
                         "type": "uint256"
                     }
                 ],
@@ -308,7 +336,7 @@ function App() {
                     },
                     {
                         "internalType": "uint256",
-                        "name": "aadhar",
+                        "name": "voterid",
                         "type": "uint256"
                     },
                     {
@@ -407,7 +435,7 @@ function App() {
                 "inputs": [
                     {
                         "internalType": "uint256",
-                        "name": "_aadhar",
+                        "name": "_voterid",
                         "type": "uint256"
                     }
                 ],
@@ -430,7 +458,7 @@ function App() {
                         "type": "uint256"
                     }
                 ],
-                "name": "idaadhar",
+                "name": "idvoterid",
                 "outputs": [
                     {
                         "internalType": "uint256",
@@ -511,7 +539,7 @@ function App() {
                 "outputs": [
                     {
                         "internalType": "uint256",
-                        "name": "aadhar",
+                        "name": "voterid",
                         "type": "uint256"
                     },
                     {
@@ -529,10 +557,9 @@ function App() {
                 "type": "function"
             }
         ];
-        const Address="0xfA7b4484Ccb37149B86fE031F318fc95Cbb3A784" ;
+        const Address="0x078Eb482C9874f567fe4E71023c76488F2eEcC62" ;
         window.web3=await new Web3(window.ethereum);
         window.contract2= await new window.web3.eth.Contract(ABI,Address);
-        console.log("connected2");
     }
 
   return (
@@ -545,6 +572,8 @@ function App() {
             <Route exact path="/voter/login" element={<Login account={account}/>} />
             <Route exact path="/adminlogin" element={<Adminlogin account={account} />} />
             <Route exact path="/voter/signup" element={<Signup account={account} />} />
+            <Route exact path="/loginotp" element={<Loginotp />} />
+            <Route exact path="/voterhome" element={<Voterhome />} />
           </Routes>
         
       </div>

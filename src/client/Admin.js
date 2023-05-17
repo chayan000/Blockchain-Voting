@@ -13,10 +13,10 @@ function Admin(props){
   }  
     return(
         <div >
-          <Header aadhar={props.eid}/>  
+          <Header voterid={props.eid}/>  
           <div className="body">
                 <Navadmin function={change}/>
-                {component==="verifynomination"?<Verifynomination aadhar={props.eid} account={props.account}/>:component==="result"?<Result aadhar={props.eid} account={props.account}/>:<Adminhome aadhar={props.eid} account={props.account}/>}
+                {component==="verifynomination"?<Verifynomination voterid={props.eid} account={props.account}/>:component==="result"?<Result voterid={props.eid} account={props.account}/>:<Adminhome voterid={props.eid} account={props.account}/>}
             </div>
         </div>
     );

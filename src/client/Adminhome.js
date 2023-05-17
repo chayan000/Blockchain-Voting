@@ -86,16 +86,16 @@ function Adminhome(props) {
         <div >
             <div className="body">
                 <div className="busket2">
-                    <h1 style={{textAlign: 'center'}}>Admin Controls</h1>
+                    <h1 style={{textAlign: 'center'}}>⚙Admin Controls</h1>
                     <h4>1)Add Topic of the vote</h4>
-                    <p>Topic: <span style={{ color: flag1==1?"green":"red"}}>{topic}</span></p>
+                    <p>Topic: <span style={{ color: flag1===1?"green":"red"}}>{topic}</span></p>
                     <label>
                         <input onChange={(e) => set_topic(e.target.value)} placeholder="Topic of vote" value={_topic} type="text" id="_topic" />
                         <button className='button1' onClick={submit} >Submit</button>
                     </label>
                     <div className="line-3"></div>
                     <h4>2)Manage Voting State</h4>
-                    <p >Voting:  <span style={{ color: flag==1?"green":"red"}}>{phase}</span></p>
+                    <p >Voting:  <span style={{ color: flag===1?"green":"red"}}>{phase}</span></p>
                     <div className="side" >
                         <button className='button4' onClick={startvoting} style={{ backgroundColor: "green"  }}>Start Voting</button>
                         <button className='button4' onClick={endvoting} style={{ backgroundColor: "red"  }} >End Voting</button>

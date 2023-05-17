@@ -15,7 +15,7 @@ function Nomination(props) {
   async function submit(e) {
     try {
       e.preventDefault();
-      await window.contract2.methods.add_candidate(props.aadhar, name, partyname, age).send({ from: props.account });
+      await window.contract2.methods.add_candidate(props.voterid, name, partyname, age).send({ from: props.account });
       alert("Nomination filed successfully")
     }
     catch {
@@ -51,7 +51,7 @@ function Nomination(props) {
               <div className="side">
                 <div className="new">
                   <h2 style={{ color: "Red" }}>Submit Nomination</h2>
-                  <p>Voter No: {props.aadhar}</p>
+                  <p>Voter No: {props.voterid}</p>
                   <label>
                     <input onChange={(e) => setname(e.target.value)} placeholder="Name" value={name} type="text" id="name" />
                   </label>

@@ -5,15 +5,15 @@ function Navbar(props) {
         <div>
             <div className="head">
                 <div className="navbar-start">
-                    <img src="/images/download.png" height={60} width={90} alt="hu hu" />
-                    <h1 className="headername ">Block Vote</h1>
+                <img src="/images/image-removebg-preview.png" alt="Logo" height={80} width={150} />
+                    
                 </div>
                 <br />
                 <br />
                 <br />
                 <div className="headerend">
-                    <img src="/images/usericon.png" height={60} width={90} alt="hu hu" />
-                    <h4 className='end'>{props.aadhar}</h4>
+                    <img src="/images/usericon.png" height={60} width={90} alt="user" />
+                    <h4 className='end'>{props.voterid}</h4>
                 </div>
             </div>
         </div>

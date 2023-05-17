@@ -19,7 +19,7 @@ function Candidates(props) {
         getstate();
     }
     async function reject(){
-        await window.contract2.methods.rejectcandidate(props.id,props.aadhar).send({from :props.account});
+        await window.contract2.methods.rejectcandidate(props.id,props.voterid).send({from :props.account});
     }
     return (
         <div className="busket4">
@@ -36,7 +36,7 @@ function Candidates(props) {
                         <th>Reject</th>
                     </tr>
                     <tr>
-                        <td>{props.aadhar}</td>
+                        <td>{props.voterid}</td>
                         <td>{props.name}</td>
                         <td>{props.age}</td>
                         <td>{<Avatar facebookId="100008343750912" />}</td>

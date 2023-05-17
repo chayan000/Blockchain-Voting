@@ -14,11 +14,10 @@ function Voterhome(props) {
     }  
     return (
         <div className="home">
-            <Header aadhar={props.aadhar}/>
+            <Header voterid={props.voterid}/>
             <div className="body">
                 <Navbar function={change}/>
-                
-                {component==="nomination"?<Nomination aadhar={props.aadhar} account={props.account}/>:component==="vote"?<Vote aadhar={props.aadhar} account={props.account}/>:component==="result"?<Result aadhar={props.aadhar} account={props.account}/>:<Home/>}
+                {component==="nomination"?<Nomination voterid={props.voterid} account={props.account}/>:component==="vote"?<Vote voterid={props.voterid} account={props.account}/>:component==="result"?<Result voterid={props.voterid} account={props.account}/>:<Home/>}
             </div>
            
         </div>

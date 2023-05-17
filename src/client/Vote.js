@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import Avatar from 'react-avatar';
 import Candidates from './Candidates';
 function Vote(props) {
   const [data, setdata] = useState([]);
@@ -13,7 +12,7 @@ function Vote(props) {
         let x = await window.contract2.methods.candidates(i).call();
         const obj = {
           "nominationid": x.nominationid,
-          "aadhar": x.aadhar,
+          "voterid": x.voterid,
           "name": x.name,
           "age": x.age,
           "partyname": x.partyname,
@@ -44,7 +43,7 @@ function Vote(props) {
   return (
     <div className='voterbody'>
       <div className='body2'>
-        {flag ? (data.map((element) => { return (element.hasverified === true ? <Candidates id={element.nominationid} caadhar={element.aadhar} uaadhar={props.aadhar} name={element.name} age={element.age} partyname={element.partyname} topic={topic} account={props.account} /> : null); }
+        {flag ? (data.map((element) => { return (element.hasverified === true ? <Candidates id={element.nominationid} caadhar={element.voterid} uaadhar={props.voterid} name={element.name} age={element.age} partyname={element.partyname} topic={topic} account={props.account} /> : null); }
         )): <h1 style={{ color: "RED" }}>Voting not Active. Please visit later...</h1>}
       </div>
     </div>
