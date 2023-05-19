@@ -12,7 +12,7 @@ function Navbar(props) {
                 <br />
                 <br />
                 <div className="headerend">
-                    <img src="/images/usericon.png" height={60} width={90} alt="user" />
+                    <img src="/images/33-338711_circle-user-icon-blue-hd-png-download.png" height={60} width={90} alt="user" />
                     <h4 className='end'>{props.voterid}</h4>
                 </div>
             </div>

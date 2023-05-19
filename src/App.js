@@ -176,7 +176,7 @@ function App() {
                 "type": "function"
             }
         ];
-         const Address="0x2a6282F95146F6785D3cac6d8B0b4AdBDFd645E1" ;
+         const Address="0x9d2284825A0fB0eD93699846E6DaA799DA94e5c4" ;
          window.web3=await new Web3(window.ethereum);
          window.contract= await new window.web3.eth.Contract(ABI,Address);
      }
@@ -557,7 +557,7 @@ function App() {
                 "type": "function"
             }
         ];
-        const Address="0x078Eb482C9874f567fe4E71023c76488F2eEcC62" ;
+        const Address="0x2E5aDA4ef88329652A391a59b8612557d9860281" ;
         window.web3=await new Web3(window.ethereum);
         window.contract2= await new window.web3.eth.Contract(ABI,Address);
     }
